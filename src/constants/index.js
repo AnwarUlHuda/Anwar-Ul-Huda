@@ -22,6 +22,7 @@ import {
   tesla,
   shopify,
   threejs,
+  chrome_Devtools
 } from "../assets";
 
 export const navLinks = [
@@ -72,6 +73,10 @@ const technologies = [
     icon: redux,
   },
   {
+    name: "Chrome DevTools",
+    icon :chrome_Devtools,
+  },
+  {
     name: "git",
     icon: git,
   },
@@ -79,21 +84,36 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Product Developer Intern",
-    company_name: "National Informatics Centre, Hyderabad",
-    icon: nic,
+    title: "Software Engineer",
+    company_name: "Seanergy Digital Services Pvt. Ltd.",
+    icon: seanergy,
     iconBg: "#383E56",
-    date: "May 2021 - Jun 2021",
+    date: "December 2023 - Current",
     points: [
-      "Developing Healthcare Monitoring Smart Device (To monitor Heartbeat, Temperature) using Internet of Things(IoT) Technology.",
-      "Collaborating with team members including Scientist of NIC to create high-quality products.",
+      "Contributed in the development and maintainance of web application in the domain of Healthcare using React.js, FastAPI, SQL and so on.....",
+      "Implemented responsive design, ensuring cross-browser compatibility.",
+      "Struggled hard enough not to leave any use case left undiscussed related to all the features of Application.",
+      "Participated in code reviews, architecture planning and provided constructive feedback to other developers and product managers.",
+    ],
+  },
+  {
+    title: "Associate Software Engineer",
+    company_name: "Seanergy Digital Services Pvt. Ltd.",
+    icon: seanergy,
+    iconBg: "#E6DEDD",
+    date: "January 2023 - November 2023",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      // "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
   {
     title: "Software Engineer Trainee",
     company_name: "Seanergy Digital Services Pvt. Ltd.",
     icon: seanergy,
-    iconBg: "#E6DEDD",
+    iconBg: "#383E56",
     date: "May 2022 - Dec 2023",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -103,16 +123,14 @@ const experiences = [
     ],
   },
   {
-    title: "Associate Software Engineer",
-    company_name: "Seanergy Digital Services Pvt. Ltd.",
-    icon: seanergy,
-    iconBg: "#383E56",
-    date: "January 2023 - November 2023",
+    title: "Product Developer Intern",
+    company_name: "National Informatics Centre, Hyderabad",
+    icon: nic,
+    iconBg: "#E6DEDD",
+    date: "May 2021 - Jun 2021",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      // "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing Healthcare Monitoring Smart Device (To monitor Heartbeat, Temperature) using Internet of Things(IoT) Technology.",
+      "Collaborating with team members including Scientist of NIC to create high-quality products.",
     ],
   },
   // {

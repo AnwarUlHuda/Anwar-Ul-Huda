@@ -24,7 +24,7 @@ const Footer = () =>{
                     <p>&copy; {fecha}. All Rights Reserved.</p>
                 </div>
                 <div className="redes-sociales">
-                    <a href="https://www.linkedin.com/in/muhammad-anwar-ul-huda-1aa2b2185/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/anwar-ul-huda" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
                     <a href="https://github.com/anwarulhuda/" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
                     <a href="https://www.instagram.com/anwar_ul_huda/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
                     <a href="https://api.whatsapp.com/send?phone=9704457197" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i></a>

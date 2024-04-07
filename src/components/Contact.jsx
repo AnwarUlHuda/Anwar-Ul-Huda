@@ -89,7 +89,7 @@ const Contact = () => (
                     telegram
                 </div>
             </a> */}
-            <a href="https://www.linkedin.com/in/muhammad-anwar-ul-huda-1aa2b2185/" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
+            <a href="https://www.linkedin.com/in/anwar-ul-huda" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
                 <div className="layer">
                     <span></span>
                     <span></span>
