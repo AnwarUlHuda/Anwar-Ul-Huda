@@ -32,6 +32,7 @@ import nic from "./company/nic.jpeg";
 import email from './emailIcon.png';
 import gitHub from './github.png';
 import linkedIn from './linkedinIcon.png';
+import chrome_Devtools from './Chrome_Devtools.jpg';
 
 export {
   logo,
@@ -63,5 +64,6 @@ export {
   tesla,
   email,
   gitHub,
-  linkedIn
+  linkedIn,
+  chrome_Devtools,
 };
