@@ -22,7 +22,8 @@ import {
   tesla,
   shopify,
   threejs,
-  chrome_Devtools
+  chrome_Devtools,
+  hackerrank,
 } from "../assets";
 
 export const navLinks = [
@@ -33,6 +34,10 @@ export const navLinks = [
   {
     id: "work",
     title: "Work",
+  },
+  {
+    id: "certificates",
+    title: "Endorsements",
   },
   {
     id: "contact",
@@ -150,69 +155,60 @@ const experiences = [
 
 
 const projects = [
-  // {
-  //   name: "Car Rent",
-  //   description:
-  //     "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "mongodb",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "tailwind",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: carrent,
-  //   source_code_link: "https://github.com/",
-  // },
-  // {
-  //   name: "Job IT",
-  //   description:
-  //     "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "restapi",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "scss",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: jobit,
-  //   source_code_link: "https://github.com/",
-  // },
-  // {
-  //   name: "Trip Guide",
-  //   description:
-  //     "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-  //   tags: [
-  //     {
-  //       name: "nextjs",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "supabase",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "css",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: tripguide,
-  //   source_code_link: "https://github.com/",
-  // },
+  {
+    name: "React",
+    title: 'HackerRank',
+    description:
+      "Concepts covered in the assessment includes Routing, Rendering Elements, State Management, Handling Events, ES6 and JavaScript and Form Validation.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "assessment",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: hackerrank,
+    source_code_link: "https://www.hackerrank.com/certificates/2a9b3b6939c8",
+  },
+  {
+    name: "Python",
+    title: 'HackerRank',
+    description:
+      "Topics covered in assessment are Scalar Types, Operators and Control Flow, Strings, Collections and Iteration, Modularity, Objects and Types and Classes",
+    tags: [
+      {
+        name: "python",
+        color: "green-text-gradient",
+      },
+      {
+        name: "assessment",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: hackerrank,
+    source_code_link: "https://www.hackerrank.com/certificates/085188d3984c",
+  },
+  {
+    name: "Problem Solving",
+    title: 'HackerRank',
+    description:
+      "This assessment covered topics of Data Structures (such as Arrays, Strings, operations on strings) and Algorithms (such as Sorting and Searching).",
+    tags: [
+      {
+        name: "problemsolving",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "assessment",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: hackerrank,
+    source_code_link: "https://www.hackerrank.com/certificates/b2b67698239a",
+  },
 ];
 
 export { services, technologies, experiences, projects

@@ -33,12 +33,18 @@ import email from './emailIcon.png';
 import gitHub from './github.png';
 import linkedIn from './linkedinIcon.png';
 import chrome_Devtools from './Chrome_Devtools.jpg';
+import hackerrank from './hackerrank.png';
+import achievement1 from './achievement_1.jpg';
+import achievement2 from './achievement_2.jpg';
+import achievement3 from './achievement_3.jpg';
+
 
 export {
   logo,
   backend,
   creator,
   mobile,
+  hackerrank,
   web,
   github,
   menu,
@@ -66,4 +72,7 @@ export {
   gitHub,
   linkedIn,
   chrome_Devtools,
+  achievement1,
+  achievement2,
+  achievement3
 };
