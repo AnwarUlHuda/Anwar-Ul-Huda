@@ -8,7 +8,7 @@ import { services } from "../../constants";
 import { SectionWrapper } from "../../hoc";
 import { fadeIn, textVariant } from "../../utils/motion";
 import { FormattedMessage } from "react-intl";
-import {IntlProvider} from 'react-intl';
+import { IntlProvider } from 'react-intl';
 import cv from '../../assets/Resume.pdf';
 
 const ServiceCard = ({ index, title, icon }) => (
@@ -42,35 +42,35 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-    <IntlProvider>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+      <IntlProvider>
+        <motion.div variants={textVariant()}>
+          <p className={styles.sectionSubText}>Introduction</p>
+          <h2 className={styles.sectionHeadText}>Overview.</h2>
+        </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-        I'm a skilled Frontend developer with experience in TypeScript and
-        JavaScript, and expertise in React framework and Redux Toolkit.
-        I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
-      </motion.p>
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        >
+          Experienced Frontend Developer with more than 2 years of experience in web application development, specializing
+          in building scalable, responsive, and visually appealing user interfaces. Proven ability to lead feature
+          development, improve performance, and collaborate with cross-functional teams. Skilled in JavaScript,
+          TypeScript, React.js, and Redux. Committed to staying updated with the latest industry trends and delivering
+          high-quality, pixel-perfect solutions.
+        </motion.p>
 
-      <a href={cv} target="_blank" rel="noopener noreferrer" download="cv.pdf" className="buttonDownload mt-4">
-        <FormattedMessage
-          id='btn-cv'
-          defaultMessage='Download CV'
-        />
-      </a>
+        <a href={cv} target="_blank" rel="noopener noreferrer" download="cv.pdf" className="buttonDownload mt-4">
+          <FormattedMessage
+            id='btn-cv'
+            defaultMessage='Download CV'
+          />
+        </a>
 
-      <div className='mt-7 flex flex-wrap gap-10'>
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
-      </div>
+        <div className='mt-7 flex flex-wrap gap-10'>
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} index={index} {...service} />
+          ))}
+        </div>
       </IntlProvider>
     </>
   );
