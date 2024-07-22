@@ -28,6 +28,7 @@ import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import seanergy from "./company/seanergy.jpeg";
 import nic from "./company/nic.jpeg";
+import jhub from "./company/jhub.jpeg";
 
 import email from './emailIcon.png';
 import gitHub from './github.png';
@@ -74,5 +75,6 @@ export {
   chrome_Devtools,
   achievement1,
   achievement2,
-  achievement3
+  achievement3,
+  jhub
 };

@@ -23,6 +23,7 @@ import {
   shopify,
   threejs,
   chrome_Devtools,
+  jhub,
   hackerrank,
 } from "../assets";
 
@@ -92,7 +93,7 @@ const experiences = [
     title: "Software Engineer",
     company_name: "Seanergy Digital Services Pvt. Ltd.",
     icon: seanergy,
-    iconBg: "#383E56",
+    iconBg: "#dfdede",
     date: "December 2023 - Current",
     points: [
       "Contributed in the development and maintainance of web application in the domain of Healthcare using React.js, FastAPI, SQL and so on.....",
@@ -105,8 +106,8 @@ const experiences = [
     title: "Associate Software Engineer",
     company_name: "Seanergy Digital Services Pvt. Ltd.",
     icon: seanergy,
-    iconBg: "#E6DEDD",
-    date: "January 2023 - November 2023",
+    iconBg: "#dfdede",
+    date: "May 2022 - November 2023",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -115,27 +116,26 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer Trainee",
-    company_name: "Seanergy Digital Services Pvt. Ltd.",
-    icon: seanergy,
-    iconBg: "#383E56",
-    date: "May 2022 - Dec 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
     title: "Product Developer Intern",
     company_name: "National Informatics Centre, Hyderabad",
     icon: nic,
-    iconBg: "#E6DEDD",
+    iconBg: "#383E56",
     date: "May 2021 - Jun 2021",
     points: [
       "Developing Healthcare Monitoring Smart Device (To monitor Heartbeat, Temperature) using Internet of Things(IoT) Technology.",
       "Collaborating with team members including Scientist of NIC to create high-quality products.",
+    ],
+  },
+  {
+    title: "Product Developer",
+    company_name: "J Hub",
+    icon: jhub,
+    iconBg: "#dfdede",
+    date: "May 2021 - Jun 2021",
+    points: [
+      "Participated in a six-week Product Engineering Workshop organised by J-HUB, JNTUH as a team",
+      "Our proposed Idea was 'Food Dart' which was to provide the Regional Home prepared Food to the Migrants at reasonable prices.",
+      "As a product we tried to build an Application and Website also we reached to few customers.",
     ],
   },
   // {
