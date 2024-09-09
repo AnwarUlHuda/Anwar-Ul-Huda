@@ -1,7 +1,7 @@
 import React from "react";
 
 import { styles } from "../styles";
-import { BallCanvas } from "./canvas";
+import { BallCanvas, StarsCanvas } from "./canvas";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
@@ -20,6 +20,7 @@ const Tech = () => {
       </motion.div>
 
       <div className='flex flex-row flex-wrap justify-center gap-10 mt-20'>
+        <StarsCanvas />
         {technologies.map((technology) => (
           <div className='w-28 h-28' key={technology.name}>
             <BallCanvas icon={technology.icon} />
