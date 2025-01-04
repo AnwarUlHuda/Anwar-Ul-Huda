@@ -21,12 +21,15 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import jira from "./tech/jira.svg";
+import postman from "./tech/postman.jpg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import seanergy from "./company/seanergy.jpeg";
+import novarroh from "./company/novarroh.jpeg"
 import nic from "./company/nic.jpeg";
 import jhub from "./company/jhub.jpeg";
 
@@ -63,10 +66,13 @@ export {
   tailwind,
   typescript,
   threejs,
+  jira,
+  postman,
   meta,
   shopify,
   starbucks,
   seanergy,
+  novarroh,
   nic,
   tesla,
   email,

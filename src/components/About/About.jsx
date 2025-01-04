@@ -52,7 +52,7 @@ const About = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          Experienced Frontend Developer with more than 2 years of experience in web application development, specializing
+          Experienced Frontend Developer with more than 3 years of experience in web application development, specializing
           in building scalable, responsive, and visually appealing user interfaces. Proven ability to lead feature
           development, improve performance, and collaborate with cross-functional teams. Skilled in JavaScript,
           TypeScript, React.js, and Redux. Committed to staying updated with the latest industry trends and delivering

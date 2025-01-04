@@ -22,9 +22,12 @@ import {
   tesla,
   shopify,
   threejs,
+  jira,
+  postman,
   chrome_Devtools,
   jhub,
   hackerrank,
+  novarroh
 } from "../assets";
 
 export const navLinks = [
@@ -86,15 +89,40 @@ const technologies = [
     name: "git",
     icon: git,
   },
+  {
+    name: "jira",
+    icon: jira,
+  },
+  {
+    name: "postman",
+    icon: postman,
+  },
+  {
+    name: "tailwindcss",
+    icon: tailwind,
+  },
 ];
 
 const experiences = [
   {
     title: "Software Engineer",
+    company_name: "Novarroh Technologies.",
+    icon: novarroh,
+    iconBg: "#383E56",
+    date: "November 2023 - Current",
+    points: [
+      "Contributed in the development and maintainance of web application in the domain of Healthcare using React.js, FastAPI, SQL and so on.....",
+      "Implemented responsive design, ensuring cross-browser compatibility.",
+      "Struggled hard enough not to leave any use case left undiscussed related to all the features of Application.",
+      "Participated in code reviews, architecture planning and provided constructive feedback to other developers and product managers.",
+    ],
+  },
+  {
+    title: "Software Engineer",
     company_name: "Seanergy Digital Services Pvt. Ltd.",
     icon: seanergy,
     iconBg: "#dfdede",
-    date: "December 2023 - Current",
+    date: "December 2023 - October 2023",
     points: [
       "Contributed in the development and maintainance of web application in the domain of Healthcare using React.js, FastAPI, SQL and so on.....",
       "Implemented responsive design, ensuring cross-browser compatibility.",
