@@ -109,7 +109,7 @@ const experiences = [
     company_name: "Novarroh Technologies.",
     icon: novarroh,
     iconBg: "#383E56",
-    date: "November 2023 - Current",
+    date: "November 2024 - Current",
     points: [
       "Contributed in the development and maintainance of web application in the domain of Healthcare using React.js, FastAPI, SQL and so on.....",
       "Implemented responsive design, ensuring cross-browser compatibility.",
@@ -122,7 +122,7 @@ const experiences = [
     company_name: "Seanergy Digital Services Pvt. Ltd.",
     icon: seanergy,
     iconBg: "#dfdede",
-    date: "December 2023 - October 2023",
+    date: "December 2023 - October 2024",
     points: [
       "Contributed in the development and maintainance of web application in the domain of Healthcare using React.js, FastAPI, SQL and so on.....",
       "Implemented responsive design, ensuring cross-browser compatibility.",
