@@ -29,7 +29,7 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import seanergy from "./company/seanergy.jpeg";
-import novarroh from "./company/novarroh.jpeg"
+import novarroh from "./company/Novarroh.jpeg"
 import nic from "./company/nic.jpeg";
 import jhub from "./company/jhub.jpeg";
 
