@@ -19,20 +19,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Manually checkout the repository using Git
-      - name: Checkout code manually
-        run: |
-          git clone https://github.com/${{ github.repository }} .
-          git fetch --all
-          git checkout main
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      # Step 2: Install Node.js (install manually)
+      # Step 2: Install Node.js
       - name: Install Node.js
         run: |
           curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
           sudo apt-get install -y nodejs
           node -v  # Verify Node.js installation
-          npm -v   # Verify npm installation (npm is required to install Yarn, but we’ll replace it with Yarn after)
+          npm -v   # Verify npm installation
 
       # Step 3: Install Yarn
       - name: Install Yarn
@@ -40,16 +37,31 @@ jobs:
           npm install -g yarn  # Install Yarn globally
           yarn -v  # Verify Yarn installation
 
-      # Step 4: Install dependencies using Yarn
+      # Step 4: Install dependencies
       - name: Install dependencies
         run: yarn install --force
 
-      # Step 5: Build the React app using Yarn
+      # Step 5: Build the React app (this will generate the 'dist' folder)
       - name: Build the React app
         run: yarn build
 
-      # Step 6: Deploy to GitHub Pages (push to gh-pages of username.github.io repository)
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        run: yarn deploy
+        run: |
+          # Create a new branch gh-pages (if not exists) and push the content of 'dist' folder
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Check out the gh-pages branch
+          git fetch origin gh-pages || git checkout --orphan gh-pages
+          git reset --hard
+
+          # Copy files from the dist folder (build output) to the root of gh-pages
+          cp -a dist/. .
+
+          # Add, commit, and push changes to the gh-pages branch
+          git add --all
+          git commit -m "Deploy React app to GitHub Pages"
+          git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
