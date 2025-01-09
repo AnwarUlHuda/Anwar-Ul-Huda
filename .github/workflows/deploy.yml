@@ -26,13 +26,13 @@ jobs:
           git fetch --all
           git checkout main
 
-      # Step 2: Install Node.js (install manually)
+      # Step 2: Install Node.js
       - name: Install Node.js
         run: |
           curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
           sudo apt-get install -y nodejs
           node -v  # Verify Node.js installation
-          npm -v   # Verify npm installation (npm is required to install Yarn, but we’ll replace it with Yarn after)
+          npm -v   # Verify npm installation
 
       # Step 3: Install Yarn
       - name: Install Yarn
@@ -40,21 +40,26 @@ jobs:
           npm install -g yarn  # Install Yarn globally
           yarn -v  # Verify Yarn installation
 
-      # Step 4: Install dependencies using Yarn
+      # Step 4: Install dependencies
       - name: Install dependencies
         run: yarn install --force
 
-      # Step 5: Build the React app using Yarn
+      # Step 5: Build the React app (this will generate the 'dist' folder)
       - name: Build the React app
         run: yarn build
 
       # Step 6: Configure Git user identity for deployment
       - name: Configure Git user identity
         run: |
-          git config --global user.name "AnwarUlHuda"
-          git config --global user.email "anwarulhudam@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # Step 7: Deploy to GitHub Pages using npx
+      # Step 7: Set up Git authentication using GITHUB_TOKEN
+      - name: Set up GitHub token authentication
+        run: |
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+          
+      # Step 8: Deploy to GitHub Pages using npx
       - name: Deploy to GitHub Pages using npx
         run: |
           # Use npx to deploy the contents of the 'dist' folder to gh-pages
