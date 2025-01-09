@@ -10,7 +10,6 @@
     "preview": "vite preview",
     "predeploy": "npm run build --force",
     "deploy": "gh-pages -d build -r https://github.com/anwarulhuda/anwarulhuda.github.io.git"
-
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
@@ -21,6 +20,7 @@
     "@react-three/fiber": "^8.11.1",
     "caniuse-lite": "^1.0.30001563",
     "framer-motion": "^9.0.7",
+    "gh-pages": "^6.3.0",
     "maath": "^0.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
