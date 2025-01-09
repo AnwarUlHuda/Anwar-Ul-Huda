@@ -33,17 +33,18 @@ jobs:
           sudo apt-get install -y nodejs
           node -v  # Verify Node.js installation
           npm -v   # Verify npm installation
+          npm install yarn
 
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install --force
+        run: yarn install --force
 
       # Step 4: Build the React app
       - name: Build the React app
-        run: npm run build
+        run: yarn build
 
       # Step 5: Deploy to GitHub Pages (push to gh-pages of username.github.io repository)
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: yarn deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
