@@ -32,18 +32,23 @@ jobs:
           curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
           sudo apt-get install -y nodejs
           node -v  # Verify Node.js installation
-          npm -v   # Verify npm installation
-          npm install yarn
+          npm -v   # Verify npm installation (npm is required to install Yarn, but we’ll replace it with Yarn after)
 
-      # Step 3: Install dependencies
+      # Step 3: Install Yarn
+      - name: Install Yarn
+        run: |
+          npm install -g yarn  # Install Yarn globally
+          yarn -v  # Verify Yarn installation
+
+      # Step 4: Install dependencies using Yarn
       - name: Install dependencies
         run: yarn install --force
 
-      # Step 4: Build the React app
+      # Step 5: Build the React app using Yarn
       - name: Build the React app
         run: yarn build
 
-      # Step 5: Deploy to GitHub Pages (push to gh-pages of username.github.io repository)
+      # Step 6: Deploy to GitHub Pages (push to gh-pages of username.github.io repository)
       - name: Deploy to GitHub Pages
         run: yarn deploy
         env:
