@@ -40,5 +40,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
         with:
-          branch: gh-pages  # The branch you want to deploy to
+          branch: main  # The branch you want to deploy to
           folder: ./dist    # The folder containing the static files
