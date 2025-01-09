@@ -48,23 +48,10 @@ jobs:
       - name: Build the React app
         run: yarn build
 
-      # Step 6: Deploy to GitHub Pages (push to gh-pages of username.github.io repository)
-      - name: Deploy to GitHub Pages
+      #  Step 6: Deploy to GitHub Pages using npx and gh-pages
+      - name: Deploy to GitHub Pages using npx
         run: |
-          # Create a new branch gh-pages (if not exists) and push the content of 'dist' folder
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Check out the gh-pages branch
-          git fetch origin gh-pages || git checkout --orphan gh-pages
-          git reset --hard
-
-          # Copy files from the dist folder (build output) to the root of gh-pages
-          cp -a dist/. .
-
-          # Add, commit, and push changes to the gh-pages branch
-          git add --all
-          git commit -m "Deploy React app to GitHub Pages"
-          git push origin gh-pages --force
+          # Use npx to deploy the contents of the 'dist' folder to gh-pages
+          npx gh-pages -d dist -b gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
