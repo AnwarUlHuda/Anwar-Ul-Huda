@@ -1,9 +1,9 @@
-name: Deploy static content to Pages
+name: Deploy React App to GitHub Pages
 
 on:
   push:
-    branches: ['main']
-  workflow_dispatch:
+    branches:
+      - main  # Trigger the workflow when changes are pushed to the 'main' branch
 
 permissions:
   contents: read
@@ -12,33 +12,33 @@ permissions:
 
 concurrency:
   group: 'pages'
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build_and_deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Checkout the code
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
+      # Step 2: Set up Node.js (ensure the version matches the one your app uses)
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: 18
-          cache: 'npm'
+          node-version: '16'  # Adjust to the version your React app uses
 
+      # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install --force
+        run: npm install
 
-      - name: Build project
+      # Step 4: Build the React app
+      - name: Build the React app
         run: npm run build
 
+      # Step 5: Deploy to GitHub Pages (push to gh-pages of username.github.io repository)
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
-        with:
-          branch: main  # The branch you want to deploy to
-          folder: ./dist    # The folder containing the static files
+        run: npm run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
