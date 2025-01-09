@@ -51,8 +51,8 @@ jobs:
       # Step 6: Configure Git user identity for deployment
       - name: Configure Git user identity
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "AnwarUlHuda"
+          git config --global user.email "anwarulhudam@gmail.com"
 
       # Step 7: Set up Git authentication using GITHUB_TOKEN
       - name: Set up GitHub token authentication
