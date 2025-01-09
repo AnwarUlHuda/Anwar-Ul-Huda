@@ -12,26 +12,26 @@ permissions:
 
 concurrency:
   group: 'pages'
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
+      # Step 1: Checkout the code using the latest version of checkout
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Using v3, as v2 might be restricted
 
-      # Step 2: Set up Node.js (ensure the version matches the one your app uses)
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # Adjust to the version your React app uses
+      # Step 2: Install Node.js manually (skip if preinstalled on the runner)
+      - name: Install Node.js
+        run: |
+          curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -  # Install Node.js 16
+          sudo apt-get install -y nodejs
 
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm install --force
 
       # Step 4: Build the React app
       - name: Build the React app
