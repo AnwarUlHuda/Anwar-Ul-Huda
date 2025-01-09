@@ -19,15 +19,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code using the latest version of checkout
-      - name: Checkout code
-        uses: actions/checkout@v3  # Using v3, as v2 might be restricted
+      # Step 1: Manually checkout the repository using Git
+      - name: Checkout code manually
+        run: |
+          git clone https://github.com/${{ github.repository }} .
+          git fetch --all
+          git checkout main
 
-      # Step 2: Install Node.js manually (skip if preinstalled on the runner)
+      # Step 2: Install Node.js (install manually)
       - name: Install Node.js
         run: |
-          curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -  # Install Node.js 16
+          curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
           sudo apt-get install -y nodejs
+          node -v  # Verify Node.js installation
+          npm -v   # Verify npm installation
 
       # Step 3: Install dependencies
       - name: Install dependencies
