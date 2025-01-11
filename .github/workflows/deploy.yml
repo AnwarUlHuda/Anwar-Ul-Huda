@@ -22,7 +22,7 @@ jobs:
       # Step 1: Manually checkout the repository using Git
       - name: Checkout code
         run: |
-          git clone https://github.com/${{ github.repository }} .
+          git clone https://github.com/AnwarUlHuda/Anwar-Ul-Huda.git .
           git fetch --all
           git checkout main
 
