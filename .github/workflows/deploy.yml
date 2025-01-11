@@ -48,7 +48,13 @@ jobs:
       - name: Build the React app
         run: yarn build
 
-      # Step 6: Deploy to GitHub Pages using npx
+      # Step 6: Configure Git user identity for deployment
+      - name: Set up Git identity
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      # Step 7: Deploy to GitHub Pages using npx
       - name: Deploy to GitHub Pages using npx
         run: |
           # Use npx to deploy the contents of the 'build' folder to gh-pages
