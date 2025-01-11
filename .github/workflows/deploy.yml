@@ -52,6 +52,6 @@ jobs:
       - name: Deploy to GitHub Pages using npx
         run: |
           # Use npx to deploy the contents of the 'build' folder to gh-pages
-          npx gh-pages -d build -b gh-pages
+          npx gh-pages -d dist -b gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
