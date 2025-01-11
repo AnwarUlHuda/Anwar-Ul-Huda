@@ -19,9 +19,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code from the repository
+      # Step 1: Manually checkout the repository using Git
       - name: Checkout code
-        uses: actions/checkout@v2
+        run: |
+          git clone https://github.com/${{ github.repository }} .
+          git fetch --all
+          git checkout main
 
       # Step 2: Install Node.js
       - name: Install Node.js
@@ -41,11 +44,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --force
 
-      # Step 5: Build the React app (this will generate the 'dist' folder)
+      # Step 5: Build the React app (this will generate the 'build' folder)
       - name: Build the React app
         run: yarn build
 
-      # Step 6: Set up GitHub Pages deployment using GitHub token
+      # Step 6: Deploy to GitHub Pages using npx
       - name: Deploy to GitHub Pages using npx
         run: |
           # Use npx to deploy the contents of the 'build' folder to gh-pages
