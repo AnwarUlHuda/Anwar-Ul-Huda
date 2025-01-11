@@ -19,12 +19,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Manually checkout the repository using Git
-      - name: Checkout code manually
-        run: |
-          git clone https://github.com/${{ github.repository }} .
-          git fetch --all
-          git checkout main
+      # Step 1: Checkout code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       # Step 2: Install Node.js
       - name: Install Node.js
@@ -48,21 +45,10 @@ jobs:
       - name: Build the React app
         run: yarn build
 
-      # Step 6: Configure Git user identity for deployment
-      - name: Configure Git user identity
-        run: |
-          git config --global user.name "AnwarUlHuda"
-          git config --global user.email "anwarulhudam@gmail.com"
-
-      # Step 7: Set up Git authentication using GITHUB_TOKEN
-      - name: Set up GitHub token authentication
-        run: |
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
-          
-      # Step 8: Deploy to GitHub Pages using npx
+      # Step 6: Set up GitHub Pages deployment using GitHub token
       - name: Deploy to GitHub Pages using npx
         run: |
-          # Use npx to deploy the contents of the 'dist' folder to gh-pages
-          npx gh-pages -d dist -b gh-pages
+          # Use npx to deploy the contents of the 'build' folder to gh-pages
+          npx gh-pages -d build -b gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
