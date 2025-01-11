@@ -1,6 +1,6 @@
 {
   "name": "3dfolio",
-  "homepage": "https://anwarulhuda.github.io",
+  "homepage": "https://anwarulhuda.github.io/Anwar-Ul-Huda",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build --force",
-    "deploy": "gh-pages -d dist -r AnwarUlHuda/Anwar-Ul-Huda"
+    "predeploy": "yarn build --force",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
