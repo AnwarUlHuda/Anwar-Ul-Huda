@@ -51,8 +51,8 @@ jobs:
       # Step 6: Configure Git user identity for deployment
       - name: Set up Git identity
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config --global user.name "AnwarUlHuda"
+          git config --global user.email "anwarulhudam@gmail.com"
 
       # Step 7: Deploy to GitHub Pages using npx
       - name: Deploy to GitHub Pages using npx
