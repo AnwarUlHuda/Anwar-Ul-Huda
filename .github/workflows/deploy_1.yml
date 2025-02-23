@@ -28,25 +28,49 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up Node
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
+
       - name: Install dependencies
-        run: npm install --force
-      - name: Build
+        run: npm ci  # 'npm ci' is preferred for clean and consistent installs
+
+      - name: Build the project
         run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+
+      # Optional: Check the size of the artifact before deploying
+      - name: Check artifact size
+        run: |
+          ARTIFACT_SIZE=$(du -sh ./dist | cut -f1)
+          echo "Artifact size is $ARTIFACT_SIZE"
+          if [[ "$ARTIFACT_SIZE" > "1G" ]]; then
+            echo "Artifact size exceeds 1GB, aborting deployment"
+            exit 1
+          fi
+
+      # Clean up unnecessary files in the artifact
+      - name: Remove unnecessary files
+        run: |
+          # Example of cleaning up .DS_Store and Thumbs.db
+          find ./dist -name '.DS_Store' -exec rm -f {} \;
+          find ./dist -name 'Thumbs.db' -exec rm -f {} \;
+          # Add any other unnecessary files you want to remove
+          find ./dist -name '.*' -not -name '.git' -exec rm -rf {} \;  # Remove hidden files except .git
+
+      - name: Setup Pages for Deployment
+        uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          # Upload dist repository
           name: "github-pages"
           path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
