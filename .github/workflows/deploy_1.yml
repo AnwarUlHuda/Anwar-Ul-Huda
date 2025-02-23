@@ -32,15 +32,13 @@ jobs:
         run: npm install --force
       - name: Build the project
         run: npm run build
-      - name: Check if dist exists
-        run: ls -l ./dist  # Add this to debug the contents of the dist folder
       - name: Configure Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: "github-pages"
-          path: 'dist'  # Make sure this is the correct path
+          path: 'path/to/github-pages/dist'  # Make sure this is the correct path
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
