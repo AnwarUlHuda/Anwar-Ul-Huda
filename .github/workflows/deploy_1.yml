@@ -40,6 +40,6 @@ jobs:
           name: "github-pages"
           path: './dist'  # Make sure this is the correct path
       - name: Deploy to GitHub Pages
-        uses: actions-gh-pages@v4
+        uses: actions/deploy-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
