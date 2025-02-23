@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: "github-pages"
-          path: './dist'  # Make sure this is the correct path
+          path: 'dist'  # Make sure this is the correct path
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
