@@ -51,9 +51,9 @@ jobs:
       - name: Remove symlinks from dist folder
         run: |
           # Find and remove symlinks in the dist directory
-          find ./dist -type l -exec rm -f {} \;
+          find .github-pages/dist -type l -exec rm -f {} \;
           # Find and remove files with more than one hard link (i.e., hard links)
-          find ./dist -type f -links +1 -exec rm -f {} \;
+          find .github-pages/dist -type f -links +1 -exec rm -f {} \;
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
