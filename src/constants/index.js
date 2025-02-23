@@ -8,6 +8,7 @@ import {
   html,
   css,
   reactjs,
+  nextjs,
   seanergy,
   nic,
   redux,
@@ -57,14 +58,6 @@ const services = [
 ];
 
 const technologies = [
-  // {
-  //   name: "HTML 5",
-  //   icon: html,
-  // },
-  // {
-  //   name: "CSS 3",
-  //   icon: css,
-  // },
   {
     name: "JavaScript",
     icon: javascript,
@@ -78,16 +71,20 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "Next JS",
+    icon: nextjs,
   },
   {
-    name: "Chrome DevTools",
-    icon :chrome_Devtools,
+    name: "tailwindcss",
+    icon: tailwind,
   },
   {
     name: "git",
     icon: git,
+  },
+  {
+    name: "Redux Toolkit",
+    icon: redux,
   },
   {
     name: "jira",
@@ -98,8 +95,16 @@ const technologies = [
     icon: postman,
   },
   {
-    name: "tailwindcss",
-    icon: tailwind,
+    name: "Chrome DevTools",
+    icon :chrome_Devtools,
+  },
+    {
+    name: "HTML 5",
+    icon: html,
+  },
+  {
+    name: "CSS 3",
+    icon: css,
   },
 ];
 
