@@ -47,6 +47,11 @@ jobs:
           name: 'github-pages'
           # Upload dist repository
           path: './dist'
+         # Remove symlinks from the dist folder
+      - name: Remove symlinks from dist folder
+        run: |
+          # Find and remove symlinks in the dist directory
+          find ./dist -type l -exec rm -f {} \;
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
