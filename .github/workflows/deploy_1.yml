@@ -41,4 +41,5 @@ jobs:
           path: './dist'  # Make sure this is the correct path
       - name: Deploy to GitHub Pages
         id: deployment
+        token : ${{ github.token }}
         uses: peaceiris/actions-gh-pages@v4
