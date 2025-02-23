@@ -35,10 +35,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
+          cache: 'npm'  # Enable npm cache
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci  # 'npm ci' is preferred for clean and consistent installs
+        run: npm ci  # 'npm ci' ensures a clean install based on package-lock.json
 
       - name: Build the project
         run: npm run build
