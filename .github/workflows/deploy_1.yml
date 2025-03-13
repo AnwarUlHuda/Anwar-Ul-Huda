@@ -42,22 +42,36 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Remove symlinks and files with more than one hard link from the dist folder
+      - name: Remove symlinks and hard links from dist folder
         run: |
-          # Find and remove symlinks in the dist directory
+          # Remove any symlinks or hard links in the dist directory
           find ./dist -type l -exec rm -f {} \;
-          # Find and remove files with more than one hard link (i.e., hard links)
           find ./dist -type f -links +1 -exec rm -f {} \;
+          
+          # Ensure there are no symlinks remaining
+          if [ $(find ./dist -type l | wc -l) -gt 0 ]; then
+            echo "Warning: There are still symlinks in the dist directory. Please check your build process.";
+          fi;
+
+      - name: Verify size of dist directory
+        run: |
+          # Check the total size of the dist directory (should be under 10GB)
+          DIST_SIZE=$(du -sh ./dist | cut -f1)
+          MAX_SIZE="10G"
+          if [[ "$DIST_SIZE" > "$MAX_SIZE" ]]; then
+            echo "Error: Artifact exceeds the maximum size of 10GB";
+            exit 1;
+          fi
+          echo "Dist directory size is: $DIST_SIZE"
 
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages  # This should match the artifact name expected by deploy-pages
-          path: ./dist        # This is the folder where the build output is located
+          name: github-pages
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          # Pointing to the uploaded artifact
-          artifact_name: github-pages  # Ensure this matches the name used in the upload step
+          artifact_name: github-pages
