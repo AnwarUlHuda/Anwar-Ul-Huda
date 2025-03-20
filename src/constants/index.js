@@ -164,7 +164,7 @@ const experiences = [
     company_name: "J Hub",
     icon: jhub,
     iconBg: "#dfdede",
-    date: "May 2021 - Jun 2021",
+    date: "Jun 2020 - Jul 2020",
     points: [
       "Participated in a six-week Product Engineering Workshop organised by J-HUB, JNTUH as a team",
       "Our proposed Idea was 'Food Dart' which was to provide the Regional Home prepared Food to the Migrants at reasonable prices.",
