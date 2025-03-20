@@ -1,75 +1,51 @@
+# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches: ['main']
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow one concurrent deployment
 concurrency:
   group: 'pages'
   cancel-in-progress: true
 
 jobs:
+  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
+      - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'npm'
-
       - name: Install dependencies
         run: npm install --force
-
-      - name: Build the project
+      - name: Build
         run: npm run build
-
-      - name: Ensure dist folder exists
-        run: |
-          if [ ! -d "./dist" ]; then
-            echo "Error: 'dist' folder not found. Build may have failed."
-            exit 1
-          fi
-
-      - name: Remove symlinks and hard links from dist folder
-        run: |
-          find ./dist -type l -exec rm -f {} \;
-          find ./dist -type f -links +1 -exec rm -f {} \;
-          if [ $(find ./dist -type l | wc -l) -gt 0 ]; then
-            echo "Warning: There are still symlinks in the dist directory. Please check your build process.";
-          fi;
-
-      - name: Verify size of dist directory
-        run: |
-          DIST_SIZE=$(du -sb ./dist | cut -f1)
-          MAX_SIZE=$((10 * 1024 * 1024 * 1024))  # 10GB in bytes
-          if [[ "$DIST_SIZE" -gt "$MAX_SIZE" ]]; then
-            echo "Error: Artifact exceeds the maximum size of 10GB (Current size: $((DIST_SIZE / 1024 / 1024)) MB)"
-            exit 1
-          fi
-          echo "Dist directory size is: $((DIST_SIZE / 1024 / 1024)) MB"
-
-      - name: Upload artifact for deployment
-        uses: actions/upload-artifact@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: github-pages
-          path: ./dist
-          retention-days: 7  # Keep artifacts for 7 days
-
+          # Upload dist repository
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_id: ${{ steps.upload-artifact.outputs.artifact_id }}
+        uses: actions/deploy-pages@v2
