@@ -9,7 +9,7 @@ import { SectionWrapper } from "../../hoc";
 import { fadeIn, textVariant } from "../../utils/motion";
 import { FormattedMessage } from "react-intl";
 import { IntlProvider } from 'react-intl';
-import cv from '../../assets/Anwar_Ul_Huda_Jan_2025_Resume.pdf';
+import cv from '../../assets/Anwar_Ul_Huda_Apr_2025_Resume.pdf';
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
