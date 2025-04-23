@@ -80,20 +80,24 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          My portfolio of certificates and endorsements serves as tangible evidence of my expertise and proficiency 
+          My portfolio of certificates and endorsements serves as tangible evidence of my expertise and proficiency
           across various domains. Each certification signifies my dedication to continuous learning and mastery of essential skills.
-          These endorsements validate my capabilities and achievements, showcasing my commitment to excellence in my field. 
-          From industry-recognized qualifications to specialized training programs, my credentials demonstrate my readiness 
-          to tackle challenges and deliver results. 
+          These endorsements validate my capabilities and achievements, showcasing my commitment to excellence in my field.
+          From industry-recognized qualifications to specialized training programs, my credentials demonstrate my readiness
+          to tackle challenges and deliver results.
           Explore my certifications to gain insight into the depth and breadth of my expertise.
         </motion.p>
       </div>
 
       <div className='mt-20 flex flex-wrap gap-7'>
-      <StarsCanvas />
+        <StarsCanvas />
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
+        {/* <div class="iframe-wrapper">
+          <iframe src="https://www.hackerrank.com/certificates/iframe/b1f196903caf" class="centered-iframe"></iframe>
+        </div> */}
+
       </div>
     </>
   );

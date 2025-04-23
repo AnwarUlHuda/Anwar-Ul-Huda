@@ -96,9 +96,9 @@ const technologies = [
   },
   {
     name: "Chrome DevTools",
-    icon :chrome_Devtools,
+    icon: chrome_Devtools,
   },
-    {
+  {
     name: "HTML 5",
     icon: html,
   },
@@ -189,6 +189,54 @@ const experiences = [
 
 const projects = [
   {
+    name: "Fronted Developer (React)",
+    title: 'HackerRank',
+    description:
+      "Concepts covered in the assessment includes React, CSS, and JavaScript.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "CSS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "assessment",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: hackerrank,
+    source_code_link: "https://www.hackerrank.com/certificates/b1f196903caf",
+  },
+  {
+    name: "JavaScript",
+    title: 'HackerRank',
+    description:
+      "Concepts covered in the assessment includes Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.",
+    tags: [
+      {
+        name: "JavaScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "problemsolving",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "assessment",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: hackerrank,
+    source_code_link: "https://www.hackerrank.com/certificates/eca15240da91",
+  },
+  {
     name: "React",
     title: 'HackerRank',
     description:
@@ -244,5 +292,6 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, projects
-   };
+export {
+  services, technologies, experiences, projects
+};
