@@ -43,6 +43,9 @@ import achievement1 from './achievement_1.jpg';
 import achievement2 from './achievement_2.jpg';
 import achievement3 from './achievement_3.jpg';
 
+import live from './tech/live-link.jpeg'
+import advanced from './advanced.png'
+import dev from './devtinder.png'
 
 export {
   logo,
@@ -84,5 +87,8 @@ export {
   achievement1,
   achievement2,
   achievement3,
-  jhub
+  jhub,
+  live,
+  advanced,
+  dev
 };

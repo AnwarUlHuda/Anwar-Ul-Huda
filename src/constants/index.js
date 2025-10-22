@@ -28,7 +28,10 @@ import {
   chrome_Devtools,
   jhub,
   hackerrank,
-  novarroh
+  novarroh,
+  github,
+  advanced,
+  dev
 } from "../assets";
 
 export const navLinks = [
@@ -39,6 +42,10 @@ export const navLinks = [
   {
     id: "work",
     title: "Work",
+  },
+  {
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "certificates",
@@ -75,6 +82,13 @@ const technologies = [
     icon: nextjs,
   },
   {
+    name: "Node js",
+    icon: nodejs,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  }, {
     name: "tailwindcss",
     icon: tailwind,
   },
@@ -114,7 +128,7 @@ const experiences = [
     company_name: "Novarroh Technologies.",
     icon: novarroh,
     iconBg: "#383E56",
-    date: "November 2024 - Current",
+    date: "November 2024 - June 2025",
     points: [
       "Contributed in the development and maintainance of web application in the domain of Healthcare using React.js, FastAPI, SQL and so on.....",
       "Implemented responsive design, ensuring cross-browser compatibility.",
@@ -187,7 +201,7 @@ const experiences = [
 ];
 
 
-const projects = [
+const certificates = [
   {
     name: "Fronted Developer (React)",
     title: 'HackerRank',
@@ -292,6 +306,106 @@ const projects = [
   },
 ];
 
+const projects = [
+  {
+    name: "DevTinder",
+    title: 'HackerRank',
+    description:
+      "Developed full stack (social media like) application using MERN technologies",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+            {
+        name: "redux_toolkit",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "npm",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "context_api",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "node",
+        color: "green-text-gradient",
+      },
+      {
+        name: "express",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "CSS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "assessment",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: dev,
+    source_code_link: "https://github.com/AnwarUlHuda/TestWeb",
+    live_link : "http://16.171.33.45/",
+  },
+  {
+    name: "React Advanced",
+    title: 'HackerRank',
+    description:
+      "Developed food delivery like application using real time APIs of Swiggy",
+    tags: [
+      {
+        name: "react",
+        color: "green-text-gradient",
+      },
+      {
+        name: "redux_toolkit",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "context_api",
+        color: "pink-text-gradient",
+      },
+            {
+        name: "swiggy",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind_css",
+        color: "pink-text-gradient",
+      },      {
+        name: "npm",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "jest",
+        color: "pink-text-gradient",
+      },      
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: advanced,
+    source_code_link: "https://github.com/AnwarUlHuda/React-Advanced",
+    live_link : "https://anwarulhuda.github.io/React-Advanced/",
+  },
+];
+
 export {
-  services, technologies, experiences, projects
+  services, technologies, experiences, certificates, projects
 };

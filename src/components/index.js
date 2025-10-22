@@ -20,6 +20,7 @@ export {
   Tech,
   Experience,
   Works,
+  Projects,
   CanvasLoader,
   EarthCanvas, 
   BallCanvas,  

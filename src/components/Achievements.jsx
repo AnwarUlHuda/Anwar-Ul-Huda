@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { achievement1, achievement2, achievement3 } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
+import { certificates } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { StarsCanvas } from "./canvas";
 
@@ -91,7 +91,7 @@ const Works = () => {
 
       <div className='mt-20 flex flex-wrap gap-7'>
         <StarsCanvas />
-        {projects.map((project, index) => (
+        {certificates.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
         {/* <div class="iframe-wrapper">
